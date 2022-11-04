@@ -14,6 +14,7 @@
 6.0 - Components: specific designed components
         -img
         -content
+        -nav
 7.0 - Utilities: utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
         - alignment	 
         - screen reader   
@@ -37,7 +38,10 @@
 }
 
 html {
-
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: .9rem;
+    line-height: 2rem;
+    color: #ffffff;
 }
 
 @media screen and (min-width: 768px) {
@@ -50,7 +54,7 @@ html {
 @media screen and (min-width: 1024px) {
 
     html {
-
+        font-size: 1rem;
     }
 }
 
@@ -59,6 +63,26 @@ html {
     4.0 - ELEMENTS
 -------------------------------------------------------------- */
 /*------ Typography------- */
+h1 {
+    font-size: 72px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+h1 b {
+    font-weight: 700;
+}
+
+h1 + p {
+    font-size: 2.3rem;
+    font-weight: 300;
+    margin-top: 2rem;
+}
+
+h1 + p span {
+    color:#1EA78D;
+}
+
 
 
 @media screen and (min-width: 768px) {
@@ -76,8 +100,8 @@ html {
 
 /* ----- Framework ----- */
 .wrapper {
-    width: 95%;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
 }
 
 .row {
@@ -89,13 +113,6 @@ html {
 .img-responsive {
     max-width: 100%;
 }
-
-/* get rid off at the end */
-
-/* [class*='col-'] div {
-    background-color: #D9D9D9;
-    height: 100%;
-} */
 
 [class*='col-'] {
     padding: .6rem;
@@ -152,6 +169,7 @@ html {
 
     .wrapper {
         width:80%;
+        margin: 0 auto;
     }
 
     [class*='col-'] {
@@ -270,15 +288,81 @@ html {
     6.0 - COMPONENTS
 -------------------------------------------------------------- */
 /* ----- content----- */
+.fixed {
+    overflow: hidden;
+    background-color: #10443F;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#home {
+    background-color: #104F41;
+}
+
+.fixed + .wrapper {
+    padding: 340px 0 150px 0;
+    text-align: center;
+}
+
+.fixed .row {
+    padding: 20px 0;
+    justify-content: center;
+}
+
+
+
 
 @media screen and (min-width: 768px) {
+
+    .fixed .row {
+        text-align: center;
+    }
 
 }
 
 @media screen and (min-width: 1024px) {
 
+    .fixed .row {
+        text-align: left;
+    }
+
+}
+/* ----- nav----- */
+nav ul {
+    text-align: center;
+    margin: 0 auto;
 }
 
+nav li {
+    margin: 0 10px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+
+
+@media screen and (min-width: 768px) {
+
+    nav ul {
+        text-align: center;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+    nav ul {
+        text-align: right;
+    }
+
+}
 
 /* ----- Images----- */
 
