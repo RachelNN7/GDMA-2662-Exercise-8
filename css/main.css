@@ -12,12 +12,11 @@
 5.0 - Objects: class-based selectors which define undecorated design patterns, building blocks
         - Framework
 6.0 - Components: specific designed components
-        -img
+        -header
         -content
         -nav
 7.0 - Utilities: utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
-        - alignment	 
-        - screen reader   
+        - alignment	  
 --------------------------------------------------------------*/
 
 
@@ -44,13 +43,6 @@ html {
     color: #ffffff;
 }
 
-@media screen and (min-width: 768px) {
-
-    html {
-
-    }
-}
-
 @media screen and (min-width: 1024px) {
 
     html {
@@ -64,33 +56,48 @@ html {
 -------------------------------------------------------------- */
 /*------ Typography------- */
 h1 {
-    font-size: 72px;
+    font-size: 3.3rem;
     font-weight: 400;
     margin-bottom: 0;
 }
 
-h1 b {
+h2 {
+    font-size: 1.1rem;
+    color: #1EA78D;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 .5rem 1rem .5rem;
+    border-bottom: #717982 solid;
+}
+
+h3 {
+    color: #1E1E1E;
+}
+
+h1 b,
+h2 {
     font-weight: 700;
 }
 
 h1 + p {
     font-size: 2.3rem;
     font-weight: 300;
-    margin-top: 2rem;
+    margin: .5em 0;
 }
 
 h1 + p span {
     color:#1EA78D;
 }
 
-
-
-@media screen and (min-width: 768px) {
-
-}
-
 @media screen and (min-width: 1024px) {
 
+    h1 {
+        font-size: 4rem;
+    }
+
+    h1 + p {
+        font-size: 2.6rem;
+    }
 }
 
 
@@ -288,6 +295,34 @@ h1 + p span {
     6.0 - COMPONENTS
 -------------------------------------------------------------- */
 /* ----- content----- */
+#home {
+    background-color: #104F41;
+}
+
+#features {
+    background-color: #F4F7F9;
+}
+
+#work {
+    text-align: center;
+    font-weight: 700;
+}
+
+#contact {
+    background-color: #1EA78D;
+    border-top: #10443F solid;
+}
+
+#work,
+#features {
+    padding: 2rem .6rem;
+    color: #717982;
+}
+
+#contact {
+    padding: 4rem .8rem;
+}
+
 .fixed {
     overflow: hidden;
     background-color: #10443F;
@@ -296,46 +331,49 @@ h1 + p span {
     width: 100%;
 }
 
-#home {
-    background-color: #104F41;
-}
-
 .fixed + .wrapper {
-    padding: 340px 0 150px 0;
+    padding: 21rem 0 7rem 0;
     text-align: center;
 }
 
 .fixed .row {
-    padding: 20px 0;
+    padding: 1rem 0;
     justify-content: center;
 }
 
-
-
-
-@media screen and (min-width: 768px) {
-
-    .fixed .row {
-        text-align: center;
-    }
-
+.fixed .row div {
+    text-align: center;
 }
 
+address p {
+    font-weight: 600;
+}
+
+address p a {
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* -----header----- */
 @media screen and (min-width: 1024px) {
 
-    .fixed .row {
+    .fixed .row div {
         text-align: left;
     }
 
 }
+
+
 /* ----- nav----- */
 nav ul {
     text-align: center;
     margin: 0 auto;
+    padding: 0;
 }
 
 nav li {
-    margin: 0 10px;
+    margin: 0 1em;
     text-decoration: none;
     display: inline-block;
 }
@@ -345,27 +383,18 @@ nav a {
     color: #ffffff;
 }
 
-
-
-
-@media screen and (min-width: 768px) {
-
-    nav ul {
-        text-align: center;
-    }
-
+nav a:hover {
+    border-bottom: #ffffff solid;
 }
 
 @media screen and (min-width: 1024px) {
 
     nav ul {
         text-align: right;
+        padding: 1rem 0;
     }
 
 }
-
-/* ----- Images----- */
-
 
 
 /*--------------------------------------------------------------
@@ -377,12 +406,3 @@ nav a {
  }
 
 
- /*-----  screen reader -----  */
- .sr-only {
-    position:absolute;
-    left:-10000px;
-    top:auto;
-    width:1px;
-    height:1px;
-    overflow:hidden;
-}
