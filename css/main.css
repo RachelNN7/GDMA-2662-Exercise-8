@@ -14,7 +14,12 @@
 6.0 - Components: specific designed components
         -header
         -content
+        -main
         -nav
+        -footer
+        -lg display
+            -header
+            -nav
 7.0 - Utilities: utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
         - alignment	  
 --------------------------------------------------------------*/
@@ -37,9 +42,7 @@
 }
 
 html {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: .9rem;
-    line-height: 2rem;
+    font: .9rem/2rem 'Source Sans Pro', sans-serif;
     color: #ffffff;
 }
 
@@ -54,6 +57,11 @@ html {
 /*--------------------------------------------------------------
     4.0 - ELEMENTS
 -------------------------------------------------------------- */
+h1 b,
+h2 {
+    font-weight: 700;
+}
+
 /*------ Typography------- */
 h1 {
     font-size: 3.3rem;
@@ -62,31 +70,37 @@ h1 {
 }
 
 h2 {
-    font-size: 1.1rem;
+    font-size: 1.8rem;
     color: #1EA78D;
+    padding: 0 1.5em .7em;
     text-transform: uppercase;
-    text-align: center;
-    padding: 0 .5rem 1rem .5rem;
     border-bottom: #717982 solid;
+    display: inline-block;
 }
 
 h3 {
     color: #1E1E1E;
-}
-
-h1 b,
-h2 {
-    font-weight: 700;
+    margin-bottom: 0;
+    padding: 0;
 }
 
 h1 + p {
-    font-size: 2.3rem;
+    font-size: 2.1rem;
     font-weight: 300;
     margin: .5em 0;
 }
 
 h1 + p span {
     color:#1EA78D;
+}
+
+h1 + p + p {
+    font-size: 1.2rem;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 @media screen and (min-width: 1024px) {
@@ -295,73 +309,84 @@ h1 + p span {
     6.0 - COMPONENTS
 -------------------------------------------------------------- */
 /* ----- content----- */
+#work,
+#features {
+    padding: 5em .6em;
+    color: #717982;
+}
+
+#work,
+#fixed .row div,
+#fixed + .wrapper,
+#features > div > header  {
+    text-align: center;
+}
+
+
+/* -----header----- */
 #home {
     background-color: #104F41;
 }
 
-#features {
-    background-color: #F4F7F9;
+#home p:last-child {
+    display: inline-block;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
-#work {
-    text-align: center;
-    font-weight: 700;
-}
-
-#contact {
+#home p:last-child:before,
+#home p:last-child:after {
+    content: '';
+    width: 20px;
+    height: 3px;
     background-color: #1EA78D;
-    border-top: #10443F solid;
+    display: block;
+    position: absolute;
+    top: 13px;
 }
 
-#work,
-#features {
-    padding: 2rem .6rem;
-    color: #717982;
+#home p:last-child:before{
+    left: -34px;
 }
 
-#contact {
-    padding: 4rem .8rem;
+#home p:last-child:after {
+    right: -34px;
 }
 
-.fixed {
-    overflow: hidden;
+#fixed {
     background-color: #10443F;
     position: fixed;
+    z-index: 1;
     top: 0;
     width: 100%;
 }
 
-.fixed + .wrapper {
-    padding: 21rem 0 7rem 0;
-    text-align: center;
+#fixed + .wrapper {
+    padding: 20em 0 6em 0;
 }
 
-.fixed .row {
-    padding: 1rem 0;
+#fixed .row {
+    padding: 1em 0;
     justify-content: center;
 }
 
-.fixed .row div {
-    text-align: center;
+
+/* -----main----- */
+#features {
+    background-color: #F4F7F9;
 }
 
-address p {
-    font-weight: 600;
+#features p {
+    margin-top: 0;
 }
 
-address p a {
-    color: #ffffff;
-    text-decoration: none;
-    display: inline-block;
+#work {
+    font-weight: 700;
 }
 
-/* -----header----- */
-@media screen and (min-width: 1024px) {
-
-    .fixed .row div {
-        text-align: left;
-    }
-
+#work p {
+    font-size: 1.22rem;
 }
 
 
@@ -374,29 +399,59 @@ nav ul {
 
 nav li {
     margin: 0 1em;
-    text-decoration: none;
     display: inline-block;
-}
-
-nav a {
-    text-decoration: none;
-    color: #ffffff;
 }
 
 nav a:hover {
     border-bottom: #ffffff solid;
 }
 
-@media screen and (min-width: 1024px) {
 
-    nav ul {
-        text-align: right;
-        padding: 1rem 0;
-    }
+/* -----footer----- */
+#contact {
+    background-color: #1EA78D;
+    border-top: #10443F solid .3em;
+    padding: 4em .8em;
+}
 
+#contact p {
+    font-size: .7rem;
+    line-height: 1.5rem;
+    margin: 0;
+}
+
+address p {
+    font-weight: 600;
+}
+
+address p a {
+    display: inline-block;
 }
 
 
+/* -----lg display----- */
+@media screen and (min-width: 1024px) {
+
+    /* -----nav----- */
+    nav ul {
+        text-align: right;
+        padding: 1em 0;
+    }
+
+
+    /* -----header----- */
+    #fixed .row div {
+        text-align: left;
+    }
+
+
+    /* -----footer----- */
+    #contact p {
+        font-size: .6rem;
+        line-height: 1.4rem;
+    }
+
+}
 /*--------------------------------------------------------------
     7.0 - UTILITY
 -------------------------------------------------------------- */
@@ -404,5 +459,3 @@ nav a:hover {
 .col-center {
     justify-content: center;
  }
-
-
