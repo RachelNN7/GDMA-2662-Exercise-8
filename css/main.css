@@ -133,6 +133,7 @@ a {
 
 .img-responsive {
     max-width: 100%;
+    width: 130px;
 }
 
 [class*='col-'] {
@@ -418,6 +419,10 @@ nav a:hover {
     font-size: .7rem;
     line-height: 1.5rem;
     margin: 0;
+}
+
+#contact img {
+    width: 85px;
 }
 
 address p {
