@@ -42,7 +42,7 @@
 }
 
 html {
-    font: .9rem/2rem 'Source Sans Pro', sans-serif;
+    font: .9rem/1.7rem 'Source Sans Pro', sans-serif;
     color: #ffffff;
 }
 
@@ -386,7 +386,7 @@ a {
 }
 
 #work p {
-    font-size: 1.22rem;
+    font-size: 1rem;
 }
 
 
@@ -422,10 +422,16 @@ nav a:hover {
 
 address p {
     font-weight: 600;
+    font-style: normal;
 }
 
 address p a {
     display: inline-block;
+}
+
+address span {
+    vertical-align: -webkit-baseline-middle;
+    font-size: 1rem;
 }
 
 
@@ -447,7 +453,7 @@ address p a {
 
     /* -----footer----- */
     #contact p {
-        font-size: .6rem;
+        font-size: .8rem;
         line-height: 1.4rem;
     }
 
